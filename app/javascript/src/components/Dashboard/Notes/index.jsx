@@ -4,6 +4,8 @@ import { Search, Settings, Plus, Dashboard } from "@bigbinary/neeto-icons";
 import { Typography, Button, Input } from "@bigbinary/neetoui/v2";
 import { MenuBar, Header } from "@bigbinary/neetoui/v2/layouts";
 
+import ListNote from "./listNote";
+
 const Notes = () => {
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);
 
@@ -109,6 +111,8 @@ const Notes = () => {
             </div>
           }
         />
+
+        <ListNote />
       </div>
     </div>
   );
