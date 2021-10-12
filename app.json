@@ -1,5 +1,5 @@
 {
-  "name": "wheel",
+  "name": "ui_challenge",
   "scripts": {
     "postdeploy": "bundle exec rake db:migrate"
   },
