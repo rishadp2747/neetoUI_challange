@@ -4,10 +4,10 @@ import { Search, Settings, Plus } from "@bigbinary/neeto-icons";
 import { Typography, Button, Input } from "@bigbinary/neetoui/v2";
 import { MenuBar, Header } from "@bigbinary/neetoui/v2/layouts";
 
+import { BURGER_MENU } from "components/Common/Icons";
+
 import Card from "./Card";
 import { NOTES_DATA } from "./constants";
-
-import { burgerMenu } from "../../../icons";
 
 const Notes = () => {
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);
@@ -106,7 +106,7 @@ const Notes = () => {
         <Header
           actionBlock={<ActionBlock />}
           menuBarHandle={
-            <Button className="mr-2" icon={() => burgerMenu} style="text" />
+            <Button className="mr-2" icon={() => BURGER_MENU} style="text" />
           }
           title={
             <div className="flex items-center">

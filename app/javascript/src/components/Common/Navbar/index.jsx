@@ -5,7 +5,7 @@ import { UserCircle, NeetoInsights } from "@bigbinary/neeto-icons";
 import { Sidebar } from "@bigbinary/neetoui/v2/layouts";
 import { withRouter } from "react-router-dom";
 
-import { noteIcon, orgLogo } from "../../../icons";
+import { NOTE_ICON, LOGO } from "components/Common/Icons";
 
 // import authenticationApi from "apis/authentication";
 // import { resetAuthTokens } from "apis/axios";
@@ -28,7 +28,7 @@ const NavBar = () => {
     {
       label: "Notes",
       to: "/notes",
-      icon: () => noteIcon
+      icon: () => NOTE_ICON
     },
     {
       label: "Contacts",
@@ -47,7 +47,7 @@ const NavBar = () => {
       <Sidebar
         isCollapsed={true}
         organizationInfo={{
-          logo: orgLogo
+          logo: LOGO
         }}
         navLinks={SIDEBAR_LINKS}
         profileInfo={{

@@ -1,6 +1,6 @@
 import React from "react";
 
-export const noteIcon = (
+export const NOTE_ICON = (
   <svg
     width="32"
     height="32"
@@ -39,7 +39,7 @@ export const noteIcon = (
   </svg>
 );
 
-export const orgLogo = (
+export const LOGO = (
   <svg
     width="36"
     height="40"
@@ -56,7 +56,7 @@ export const orgLogo = (
   </svg>
 );
 
-export const burgerMenu = (
+export const BURGER_MENU = (
   <svg
     width="24"
     height="24"
