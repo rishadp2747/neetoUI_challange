@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 
-import { Search, Settings, Plus, Dashboard } from "@bigbinary/neeto-icons";
+import { Search, Settings, Plus } from "@bigbinary/neeto-icons";
 import { Typography, Button, Input } from "@bigbinary/neetoui/v2";
 import { MenuBar, Header } from "@bigbinary/neetoui/v2/layouts";
 
 import { notes } from "./Data/notes";
 import ListNote from "./ListNote";
+
+import { burgerMenu } from "../../Common/Icons";
 
 const Notes = () => {
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);
@@ -99,11 +101,7 @@ const Notes = () => {
             />
           ]}
           menuBarHandle={
-            <Button
-              className="mr-2"
-              icon={() => <Dashboard size={25} />}
-              style="text"
-            />
+            <Button className="mr-2" icon={() => burgerMenu} style="text" />
           }
           title={
             <div className="flex items-center">

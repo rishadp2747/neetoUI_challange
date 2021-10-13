@@ -1,14 +1,11 @@
 import React from "react";
 
 // import { Toastr } from "neetoui";
-import {
-  Highlight,
-  UserCircle,
-  NeetoInsights,
-  NeetoAnalytics
-} from "@bigbinary/neeto-icons";
+import { UserCircle, NeetoInsights } from "@bigbinary/neeto-icons";
 import { Sidebar } from "@bigbinary/neetoui/v2/layouts";
 import { withRouter } from "react-router-dom";
+
+import { noteIcon, orgLogo } from "../Icons";
 
 // import authenticationApi from "apis/authentication";
 // import { resetAuthTokens } from "apis/axios";
@@ -32,13 +29,13 @@ const NavBar = () => {
       <Sidebar
         isCollapsed={true}
         organizationInfo={{
-          logo: <NeetoAnalytics color="#ffffff" size={24} />
+          logo: orgLogo
         }}
         navLinks={[
           {
             label: "Notes",
             to: "/notes",
-            icon: () => <Highlight color="#1e1e20" size={24} />
+            icon: () => noteIcon
           },
           {
             label: "Contacts",
