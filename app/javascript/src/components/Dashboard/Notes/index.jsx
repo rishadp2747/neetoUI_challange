@@ -4,12 +4,22 @@ import { Search, Settings, Plus } from "@bigbinary/neeto-icons";
 import { Typography } from "@bigbinary/neetoui/v2";
 import { MenuBar } from "@bigbinary/neetoui/v2/layouts";
 
-import Card from "./Card";
+
+
 import { NOTES_DATA } from "./constants";
+
 import Title from "./Title";
+import Card from "./Card";
+
+
 
 const Notes = () => {
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);
+  const [showDeleteAlert, setDeleteAlert] = useState(false);
+
+  const handleDeleteAlert = () => {
+    setDeleteAlert(!showDeleteAlert);
+  };
 
   return (
     <div className="flex w-full">
@@ -93,8 +103,14 @@ const Notes = () => {
             title={note.title}
             body={note.body}
             status={note.status}
+            deleteAlert={() => handleDeleteAlert()}
           />
         ))}
+
+        <DeleteAlert
+          showModal={showDeleteAlert}
+          onClose={() => handleDeleteAlert()}
+        />
       </div>
     </div>
   );
