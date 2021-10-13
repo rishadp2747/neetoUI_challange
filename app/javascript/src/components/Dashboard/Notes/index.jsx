@@ -5,7 +5,7 @@ import { Typography, Button, Input } from "@bigbinary/neetoui/v2";
 import { MenuBar, Header } from "@bigbinary/neetoui/v2/layouts";
 
 import DeleteAlert from "./DeleteAlert";
-import ListNote from "./ListNote";
+import ListNote from "./LsistNote";
 
 import { notes } from "../../../data/notes";
 import { burgerMenu } from "../../../icons";
