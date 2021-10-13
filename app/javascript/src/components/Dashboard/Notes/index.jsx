@@ -4,8 +4,8 @@ import { Search, Settings, Plus } from "@bigbinary/neeto-icons";
 import { Typography, Button, Input } from "@bigbinary/neetoui/v2";
 import { MenuBar, Header } from "@bigbinary/neetoui/v2/layouts";
 
+import Card from "./Card";
 import { NOTES_DATA } from "./constants";
-import ListNote from "./ListNote";
 
 import { burgerMenu } from "../../../icons";
 
@@ -116,7 +116,13 @@ const Notes = () => {
         />
 
         {NOTES_DATA.map((note, index) => (
-          <ListNote
+          // <ListNote
+          //   key={index}
+          //   title={note.title}
+          //   body={note.body}
+          //   status={note.status}
+          // />
+          <Card
             key={index}
             title={note.title}
             body={note.body}
