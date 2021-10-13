@@ -4,10 +4,10 @@ import { Search, Settings, Plus } from "@bigbinary/neeto-icons";
 import { Typography, Button, Input } from "@bigbinary/neetoui/v2";
 import { MenuBar, Header } from "@bigbinary/neetoui/v2/layouts";
 
-import { notes } from "./Data/notes";
 import ListNote from "./ListNote";
 
-import { burgerMenu } from "../../Common/Icons";
+import { notes } from "../../../data/notes";
+import { burgerMenu } from "../../../icons";
 
 const Notes = () => {
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);

@@ -5,7 +5,7 @@ import { UserCircle, NeetoInsights } from "@bigbinary/neeto-icons";
 import { Sidebar } from "@bigbinary/neetoui/v2/layouts";
 import { withRouter } from "react-router-dom";
 
-import { noteIcon, orgLogo } from "../Icons";
+import { noteIcon, orgLogo } from "../../../icons";
 
 // import authenticationApi from "apis/authentication";
 // import { resetAuthTokens } from "apis/axios";
