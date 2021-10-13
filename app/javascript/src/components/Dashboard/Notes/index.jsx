@@ -4,13 +4,30 @@ import { Search, Settings, Plus } from "@bigbinary/neeto-icons";
 import { Typography, Button, Input } from "@bigbinary/neetoui/v2";
 import { MenuBar, Header } from "@bigbinary/neetoui/v2/layouts";
 
+import { NOTES_DATA } from "./constants";
 import ListNote from "./ListNote";
 
-import { notes } from "../../../data/notes";
 import { burgerMenu } from "../../../icons";
 
 const Notes = () => {
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);
+
+  const ActionBlock = () => {
+    return (
+      <div className="flex space-x-4">
+        <Input
+          key="header_search"
+          placeholder="Search Name, Email, Phone Number, Etc."
+          prefix={<Search size={16} />}
+        />
+        <Button
+          key="header_button"
+          label="Add Note"
+          icon={() => <Plus size={16} className="ml-3" />}
+        />
+      </div>
+    );
+  };
 
   return (
     <div className="flex w-full">
@@ -87,19 +104,7 @@ const Notes = () => {
 
       <div className="flex flex-col content-start justify-items-start w-full p-5">
         <Header
-          actionBlock={[
-            <Input
-              key="header_search"
-              placeholder="Search Name, Email, Phone Number, Etc."
-              prefix={<Search size={16} />}
-            />,
-            <Button
-              key="header_button"
-              label="Add Note"
-              className="px-2.5 py-2 ml-3"
-              icon={() => <Plus size={18} className="ml-3" />}
-            />
-          ]}
+          actionBlock={<ActionBlock />}
           menuBarHandle={
             <Button className="mr-2" icon={() => burgerMenu} style="text" />
           }
@@ -110,7 +115,7 @@ const Notes = () => {
           }
         />
 
-        {notes.map((note, index) => (
+        {NOTES_DATA.map((note, index) => (
           <ListNote
             key={index}
             title={note.title}
