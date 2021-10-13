@@ -5,7 +5,7 @@ import { Typography, Button, Input } from "@bigbinary/neetoui/v2";
 import { MenuBar, Header } from "@bigbinary/neetoui/v2/layouts";
 
 import { notes } from "./Data/notes";
-import ListNote from "./listNote";
+import ListNote from "./ListNote";
 
 const Notes = () => {
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);
@@ -88,7 +88,6 @@ const Notes = () => {
           actionBlock={[
             <Input
               key="header_search"
-              className=""
               placeholder="Search Name, Email, Phone Number, Etc."
               prefix={<Search size={16} />}
             />,

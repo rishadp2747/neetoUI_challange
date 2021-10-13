@@ -1,7 +1,12 @@
 import React from "react";
 
 // import { Toastr } from "neetoui";
-import { Highlight, UserCircle, NeetoInsights } from "@bigbinary/neeto-icons";
+import {
+  Highlight,
+  UserCircle,
+  NeetoInsights,
+  NeetoAnalytics
+} from "@bigbinary/neeto-icons";
 import { Sidebar } from "@bigbinary/neetoui/v2/layouts";
 import { withRouter } from "react-router-dom";
 
@@ -26,7 +31,9 @@ const NavBar = () => {
     <div className="flex flex-row items-start justify-start">
       <Sidebar
         isCollapsed={true}
-        organizationInfo={{}}
+        organizationInfo={{
+          logo: <NeetoAnalytics color="#ffffff" size={24} />
+        }}
         navLinks={[
           {
             label: "Notes",
