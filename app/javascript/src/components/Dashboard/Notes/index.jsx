@@ -1,33 +1,15 @@
 import React, { useState } from "react";
 
 import { Search, Settings, Plus } from "@bigbinary/neeto-icons";
-import { Typography, Button, Input } from "@bigbinary/neetoui/v2";
-import { MenuBar, Header } from "@bigbinary/neetoui/v2/layouts";
-
-import { BURGER_MENU } from "components/Common/Icons";
+import { Typography } from "@bigbinary/neetoui/v2";
+import { MenuBar } from "@bigbinary/neetoui/v2/layouts";
 
 import Card from "./Card";
 import { NOTES_DATA } from "./constants";
+import Title from "./Title";
 
 const Notes = () => {
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);
-
-  const ActionBlock = () => {
-    return (
-      <div className="flex space-x-4">
-        <Input
-          key="header_search"
-          placeholder="Search Name, Email, Phone Number, Etc."
-          prefix={<Search size={16} />}
-        />
-        <Button
-          key="header_button"
-          label="Add Note"
-          icon={() => <Plus size={16} className="ml-3" />}
-        />
-      </div>
-    );
-  };
 
   return (
     <div className="flex w-full">
@@ -103,25 +85,9 @@ const Notes = () => {
       </MenuBar>
 
       <div className="flex flex-col content-start justify-items-start w-full p-5">
-        <Header
-          actionBlock={<ActionBlock />}
-          menuBarHandle={
-            <Button className="mr-2" icon={() => BURGER_MENU} style="text" />
-          }
-          title={
-            <div className="flex items-center">
-              <h3>All Notes</h3>
-            </div>
-          }
-        />
+        <Title heading="All Notes" />
 
         {NOTES_DATA.map((note, index) => (
-          // <ListNote
-          //   key={index}
-          //   title={note.title}
-          //   body={note.body}
-          //   status={note.status}
-          // />
           <Card
             key={index}
             title={note.title}
