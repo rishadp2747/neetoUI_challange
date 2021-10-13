@@ -4,6 +4,7 @@ import { Search, Settings, Plus, Dashboard } from "@bigbinary/neeto-icons";
 import { Typography, Button, Input } from "@bigbinary/neetoui/v2";
 import { MenuBar, Header } from "@bigbinary/neetoui/v2/layouts";
 
+import { notes } from "./Data/notes";
 import ListNote from "./listNote";
 
 const Notes = () => {
@@ -112,7 +113,14 @@ const Notes = () => {
           }
         />
 
-        <ListNote />
+        {notes.map((note, index) => (
+          <ListNote
+            key={index}
+            title={note.title}
+            body={note.body}
+            status={note.status}
+          />
+        ))}
       </div>
     </div>
   );
