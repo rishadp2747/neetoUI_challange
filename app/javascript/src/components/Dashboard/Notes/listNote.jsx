@@ -21,7 +21,7 @@ const ListNote = props => {
             label=""
             buttonStyle="text"
             position="bottom-end"
-            icon={() => <MenuVertical size={18} />}
+            icon={() => <MenuVertical size={17} />}
             className="m-0"
           >
             <li>Edit</li>
