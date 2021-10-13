@@ -2,6 +2,7 @@ import React from "react";
 
 import { Clock } from "@bigbinary/neeto-icons";
 import { Typography, Tooltip, Tag, Avatar } from "@bigbinary/neetoui/v2";
+import PropTypes from "prop-types";
 
 const CardFooter = ({ status }) => {
   return (
@@ -25,6 +26,10 @@ const CardFooter = ({ status }) => {
       </div>
     </div>
   );
+};
+
+CardFooter.propTypes = {
+  status: PropTypes.string
 };
 
 export default CardFooter;

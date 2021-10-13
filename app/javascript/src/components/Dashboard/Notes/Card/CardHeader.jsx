@@ -3,8 +3,9 @@ import React from "react";
 import { MenuVertical } from "@bigbinary/neeto-icons";
 import { Typography, Dropdown } from "@bigbinary/neetoui/v2";
 import { Header } from "@bigbinary/neetoui/v2/layouts";
+import PropTypes from "prop-types";
 
-const CardHeader = ({ title }) => {
+const CardHeader = ({ title, showAlert, editNote }) => {
   return (
     <Header
       className="p-px"
@@ -15,8 +16,8 @@ const CardHeader = ({ title }) => {
           position="bottom-end"
           icon={() => <MenuVertical size={17} />}
         >
-          <li>Edit</li>
-          <li>Delete</li>
+          <li onClick={editNote}>Edit</li>
+          <li onClick={showAlert}>Delete</li>
         </Dropdown>
       }
       title={
@@ -28,6 +29,12 @@ const CardHeader = ({ title }) => {
       }
     />
   );
+};
+
+CardHeader.propTypes = {
+  title: PropTypes.string,
+  editNote: PropTypes.func,
+  showAlert: PropTypes.func
 };
 
 export default CardHeader;
