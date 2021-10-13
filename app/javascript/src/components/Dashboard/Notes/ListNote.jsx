@@ -10,7 +10,7 @@ import {
 } from "@bigbinary/neetoui/v2";
 import { Header } from "@bigbinary/neetoui/v2/layouts";
 
-const ListNote = props => {
+const ListNote = ({ title, body, status, deleteAlert }) => {
   return (
     <div className="flex neeto-ui-border-gray-400  neeto-ui-shadow-xs border px-3  my-2 flex-col">
       <Header
@@ -25,19 +25,19 @@ const ListNote = props => {
             className="m-0"
           >
             <li>Edit</li>
-            <li>Delete</li>
+            <li onClick={deleteAlert}>Delete</li>
           </Dropdown>
         }
         title={
           <div className="flex items-center">
             <Typography style="h4" className="m-0">
-              {props.title}
+              {title}
             </Typography>
           </div>
         }
       />
       <Typography style="body2" className="pt-0 mt-0 pb-3">
-        {props.body}
+        {body}
       </Typography>
       <div className="flex flex-row border-t neeto-ui-border-gray-400 py-3">
         <Tag
@@ -52,7 +52,7 @@ const ListNote = props => {
             <div className="flex flex-row items-cente  px-2">
               <Clock size={18} color="#87929d" className="m-0.5 mx-1.5" />
               <Typography style="body2" className="neeto-ui-text-gray-500">
-                {props.status} 2 hours ago
+                {status} 2 hours ago
               </Typography>
             </div>
           </Tooltip>

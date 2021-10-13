@@ -4,6 +4,7 @@ import { Search, Settings, Plus } from "@bigbinary/neeto-icons";
 import { Typography, Button, Input } from "@bigbinary/neetoui/v2";
 import { MenuBar, Header } from "@bigbinary/neetoui/v2/layouts";
 
+import DeleteAlert from "./DeleteAlert";
 import ListNote from "./ListNote";
 
 import { notes } from "../../../data/notes";
@@ -11,6 +12,11 @@ import { burgerMenu } from "../../../icons";
 
 const Notes = () => {
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);
+  const [showDeleteAlert, setDeleteAlert] = useState(false);
+
+  const handleDeleteAlert = () => {
+    setDeleteAlert(!showDeleteAlert);
+  };
 
   return (
     <div className="flex w-full">
@@ -116,8 +122,14 @@ const Notes = () => {
             title={note.title}
             body={note.body}
             status={note.status}
+            deleteAlert={() => handleDeleteAlert()}
           />
         ))}
+
+        <DeleteAlert
+          showModal={showDeleteAlert}
+          onClose={() => handleDeleteAlert()}
+        />
       </div>
     </div>
   );
