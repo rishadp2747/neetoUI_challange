@@ -7,7 +7,7 @@ import { MenuBar } from "@bigbinary/neetoui/v2/layouts";
 import Card from "./Card";
 import { NOTES_DATA } from "./constants";
 import DeleteAlert from "./DeleteAlert";
-import NewNotePane from "./NewNotePane";
+import NewNoteForm from "./NewNoteForm";
 import Title from "./Title";
 
 const Notes = () => {
@@ -110,7 +110,7 @@ const Notes = () => {
           onClose={() => handleDeleteAlert()}
         />
 
-        <NewNotePane showPane={showNotePane} onClose={() => handleNotePane()} />
+        <NewNoteForm showPane={showNotePane} onClose={() => handleNotePane()} />
       </div>
     </div>
   );
