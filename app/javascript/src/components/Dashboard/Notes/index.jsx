@@ -7,14 +7,20 @@ import { MenuBar } from "@bigbinary/neetoui/v2/layouts";
 import Card from "./Card";
 import { NOTES_DATA } from "./constants";
 import DeleteAlert from "./DeleteAlert";
+import NewNotePane from "./NewNotePane";
 import Title from "./Title";
 
 const Notes = () => {
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);
   const [showDeleteAlert, setDeleteAlert] = useState(false);
+  const [showNotePane, setNotePane] = useState(false);
 
   const handleDeleteAlert = () => {
     setDeleteAlert(!showDeleteAlert);
+  };
+
+  const handleNotePane = () => {
+    setNotePane(!showNotePane);
   };
 
   return (
@@ -91,25 +97,20 @@ const Notes = () => {
       </MenuBar>
 
       <div className="flex flex-col content-start justify-items-start w-full p-5">
-        <Title heading="All Notes" />
+        <Title addNote={() => handleNotePane()} heading="All Notes" />
 
         {NOTES_DATA.map((note, index) => (
-          <Card
-            key={index}
-            title={note.title}
-            status={note.status}
-          >
+          <Card key={index} title={note.title} status={note.status}>
             <Typography style="body2">{note.body}</Typography>
           </Card>
-
-          />
-
         ))}
 
         <DeleteAlert
           showModal={showDeleteAlert}
           onClose={() => handleDeleteAlert()}
         />
+
+        <NewNotePane showPane={showNotePane} onClose={() => handleNotePane()} />
       </div>
     </div>
   );
