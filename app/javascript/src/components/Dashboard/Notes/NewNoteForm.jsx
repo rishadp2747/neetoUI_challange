@@ -4,7 +4,7 @@ import { Input, Textarea, Select } from "@bigbinary/neetoui/v2";
 import { Formik, Form } from "formik";
 import * as yup from "yup";
 
-import Panel from "./Panel";
+import Panel from "../Panel";
 
 const TAGS = ["Getting Started", "Onboarding", "User Flow", "UX", "Bugs", "V2"];
 

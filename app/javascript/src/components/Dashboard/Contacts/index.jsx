@@ -1,27 +1,19 @@
 import React, { useState } from "react";
 
 import { Search, Settings, Plus } from "@bigbinary/neeto-icons";
-import { Typography } from "@bigbinary/neetoui/v2";
+import { Typography, Pagination } from "@bigbinary/neetoui/v2";
 import { MenuBar } from "@bigbinary/neetoui/v2/layouts";
 
-import Card from "./Card";
-import { NOTES_DATA } from "./constants";
-import DeleteAlert from "./DeleteAlert";
-import NewNoteForm from "./NewNoteForm";
+import Table from "./Table";
 
 import Title from "../Title";
 
-const Notes = () => {
+const Contacts = () => {
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);
-  const [showDeleteAlert, setDeleteAlert] = useState(false);
-  const [showNotePane, setNotePane] = useState(false);
+  const [showContactPane, setContactPane] = useState(false);
 
-  const handleDeleteAlert = () => {
-    setDeleteAlert(!showDeleteAlert);
-  };
-
-  const handleNotePane = () => {
-    setNotePane(!showNotePane);
+  const handleContactPane = () => {
+    setContactPane(!showContactPane);
   };
 
   return (
@@ -34,10 +26,10 @@ const Notes = () => {
           </div>
         }
       >
-        <MenuBar.Block label="All" count={200} active />
-        <MenuBar.Block label="Users" count={80} />
-        <MenuBar.Block label="Leads" count={60} />
-        <MenuBar.Block label="Visitors" count={60} />
+        <MenuBar.Block label="All" count={0} active />
+        <MenuBar.Block label="Archived" count={0} />
+        <MenuBar.Block label="Completed" count={0} />
+        <MenuBar.Block label="Phase2" count={0} />
         <MenuBar.SubTitle
           iconProps={[
             {
@@ -60,9 +52,6 @@ const Notes = () => {
           collapse={isSearchCollapsed}
           onCollapse={() => setIsSearchCollapsed(true)}
         />
-        <MenuBar.Block label="Europe" count={80} />
-        <MenuBar.Block label="Middle-East" count={60} />
-        <MenuBar.Block label="Asia" count={60} />
 
         <MenuBar.SubTitle
           iconProps={[
@@ -92,29 +81,23 @@ const Notes = () => {
           collapse={isSearchCollapsed}
           onCollapse={() => setIsSearchCollapsed(true)}
         />
-        <MenuBar.Block label="Sales" count={80} />
-        <MenuBar.Block label="Finance" count={60} />
-        <MenuBar.Block label="Asia" count={60} />
       </MenuBar>
+      <div className="flex flex-col  w-full p-5">
+        <Title addNote={() => handleContactPane()} heading="All Contacts" />
 
-      <div className="flex flex-col content-start justify-items-start w-full p-5">
-        <Title addNote={() => handleNotePane()} heading="All Notes" />
+        <Table />
 
-        {NOTES_DATA.map((note, index) => (
-          <Card key={index} title={note.title} status={note.status}>
-            <Typography style="body2">{note.body}</Typography>
-          </Card>
-        ))}
-
-        <DeleteAlert
-          showModal={showDeleteAlert}
-          onClose={() => handleDeleteAlert()}
-        />
-
-        <NewNoteForm showPane={showNotePane} onClose={() => handleNotePane()} />
+        <div className="flex flex-row items-center justify-end w-full mt-6 mb-8">
+          <Pagination
+            count={300}
+            pageNo={1}
+            pageSize={25}
+            navigate={() => {}}
+          />
+        </div>
       </div>
     </div>
   );
 };
 
-export default Notes;
+export default Contacts;
