@@ -1,14 +1,13 @@
 import React from "react";
 
-import { Typography } from "@bigbinary/neetoui/v2";
 import PropTypes from "prop-types";
 
-const CardBody = ({ body }) => {
-  return <Typography style="body2">{body}</Typography>;
+const CardBody = ({ children }) => {
+  return <div>{children}</div>;
 };
 
 CardBody.propTypes = {
-  body: PropTypes.string
+  children: PropTypes.node.isRequired
 };
 
 export default CardBody;
