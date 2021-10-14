@@ -1,11 +1,21 @@
 import React from "react";
 
-import { Button, Input, Textarea } from "@bigbinary/neetoui/v2";
+import { Input, Textarea, Select } from "@bigbinary/neetoui/v2";
 import { Formik, Form } from "formik";
 import * as yup from "yup";
 
-export default function NewNoteForm({ onClose }) {
+const TAGS = ["Getting Started", "Onboarding", "User Flow", "UX", "Bugs", "V2"];
+
+const TAGS_OPTIONS = TAGS.map(val => {
+  return {
+    label: val,
+    value: val.toLowerCase().split(" ").join("_")
+  };
+});
+
+const NewNoteForm = () => {
   const handleSubmit = () => {};
+
   return (
     <Formik
       initialValues={{
@@ -18,26 +28,42 @@ export default function NewNoteForm({ onClose }) {
         description: yup.string().required("Description is required")
       })}
     >
-      <Form>
-        <Input label="Title" name="title" className="mb-6" />
-        <Textarea label="Description" name="description" rows={8} />
-        <div className="nui-pane__footer nui-pane__footer--absolute">
-          <Button
-            onClick={onClose}
-            label="Cancel"
-            size="large"
-            style="secondary"
-          />
-
-          <Button
-            type="submit"
-            label="Submit"
-            size="large"
-            style="primary"
-            className="ml-2"
-          />
-        </div>
+      <Form className="space-y-4">
+        <Input label="Title" placeholder="Enter Title" required />
+        <Textarea
+          label="Description"
+          placeholder="Enter note description"
+          name="description"
+          rows={1}
+          required
+        />
+        <Select
+          required
+          isSearchable
+          label="Assigned Contact"
+          name="assignedContact"
+          options={[
+            {
+              label: "Sam",
+              value: "sam"
+            },
+            {
+              label: "Raj",
+              value: "raj"
+            }
+          ]}
+          placeholder="Select Role"
+        />
+        <Select
+          isSearchable
+          required
+          label="Tags"
+          name="tags"
+          options={TAGS_OPTIONS}
+          placeholder="Select Role"
+        />
       </Form>
     </Formik>
   );
-}
+};
+export default NewNoteForm;
