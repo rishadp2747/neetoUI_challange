@@ -1,3 +1,7 @@
+import { CONTACTS } from "components/Dashboard/constants";
+
+const TAGS = ["Getting Started", "Onboarding", "User Flow", "UX", "Bugs", "V2"];
+
 export const NOTES_DATA = [
   {
     title: "How to claim warranty?",
@@ -15,3 +19,17 @@ export const NOTES_DATA = [
     status: "Drafted"
   }
 ];
+
+export const CONTACT_OPTIONS = CONTACTS.map(val => {
+  return {
+    label: val.name,
+    value: val.name.toLowerCase().split(" ").join("_")
+  };
+});
+
+export const TAGS_OPTIONS = TAGS.map(val => {
+  return {
+    label: val,
+    value: val.toLowerCase().split(" ").join("_")
+  };
+});

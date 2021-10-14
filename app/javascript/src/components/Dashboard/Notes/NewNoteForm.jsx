@@ -2,18 +2,12 @@ import React, { useRef } from "react";
 
 import { Input, Textarea, Select } from "@bigbinary/neetoui/v2";
 import { Formik, Form } from "formik";
-import * as yup from "yup";
 
+import formInitialValues from "constants/formInitialValues";
+import formValidationSchemas from "constants/formValidationSchemas";
+
+import { CONTACT_OPTIONS, TAGS_OPTIONS } from "./constants";
 import Panel from "./Panel";
-
-const TAGS = ["Getting Started", "Onboarding", "User Flow", "UX", "Bugs", "V2"];
-
-const TAGS_OPTIONS = TAGS.map(val => {
-  return {
-    label: val,
-    value: val.toLowerCase().split(" ").join("_")
-  };
-});
 
 const NewNoteForm = ({ showPane, onClose }) => {
   const formRef = useRef();
@@ -37,21 +31,9 @@ const NewNoteForm = ({ showPane, onClose }) => {
     >
       <Formik
         innerRef={formRef}
-        initialValues={{
-          title: "",
-          description: "",
-          assignedContact: "",
-          tags: ""
-        }}
+        initialValues={formInitialValues.noteForm}
         onSubmit={handleSubmit}
-        validationSchema={yup.object({
-          title: yup.string().required("Title is required"),
-          description: yup.string().required("Description is required"),
-          assignedContact: yup
-            .string()
-            .required("Assigned Contact is required"),
-          tags: yup.string().required("Tag is required")
-        })}
+        validationSchema={formValidationSchemas.noteForm}
       >
         <Form className="space-y-4">
           <Input label="Title" placeholder="Enter Title" required />
@@ -67,16 +49,7 @@ const NewNoteForm = ({ showPane, onClose }) => {
             isSearchable
             label="Assigned Contact"
             name="assignedContact"
-            options={[
-              {
-                label: "Sam",
-                value: "sam"
-              },
-              {
-                label: "Raj",
-                value: "raj"
-              }
-            ]}
+            options={CONTACT_OPTIONS}
             placeholder="Select Role"
           />
           <Select

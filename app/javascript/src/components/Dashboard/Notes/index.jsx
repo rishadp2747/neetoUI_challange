@@ -16,11 +16,11 @@ const Notes = () => {
   const [showNotePane, setNotePane] = useState(false);
 
   const handleDeleteAlert = () => {
-    setDeleteAlert(!showDeleteAlert);
+    setDeleteAlert(showDeleteAlert => !showDeleteAlert);
   };
 
   const handleNotePane = () => {
-    setNotePane(!showNotePane);
+    setNotePane(showNotePane => !showNotePane);
   };
 
   return (
