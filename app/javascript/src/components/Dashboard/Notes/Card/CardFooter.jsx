@@ -10,7 +10,7 @@ const CardFooter = ({ status }) => {
       <Tag size="small" style="outline" label="Getting Started" color="grey" />
 
       <div className="flex flex-row  items-center ml-auto">
-        <Tooltip placement={"bottom-start"} content={"Wednesday, 10:30 AM"}>
+        <Tooltip placement="bottom-start" content="Wednesday, 10:30 AM">
           <div className="flex flex-row items-cente  px-2">
             <Clock size={18} color="#87929d" className="m-0.5 mx-1.5" />
             <Typography style="body2" className="neeto-ui-text-gray-500">

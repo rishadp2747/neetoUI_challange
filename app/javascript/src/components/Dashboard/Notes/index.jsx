@@ -97,10 +97,13 @@ const Notes = () => {
           <Card
             key={index}
             title={note.title}
-            body={note.body}
             status={note.status}
-            showAlert={() => handleDeleteAlert()}
+          >
+            <Typography style="body2">{note.body}</Typography>
+          </Card>
+
           />
+
         ))}
 
         <DeleteAlert
