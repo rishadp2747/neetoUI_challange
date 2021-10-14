@@ -8,7 +8,8 @@ import Card from "./Card";
 import { NOTES_DATA } from "./constants";
 import DeleteAlert from "./DeleteAlert";
 import NewNoteForm from "./NewNoteForm";
-import Title from "./Title";
+
+import Title from "../Title";
 
 const Notes = () => {
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);
