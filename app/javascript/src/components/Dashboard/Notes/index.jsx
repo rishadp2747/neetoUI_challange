@@ -7,9 +7,10 @@ import { MenuBar } from "@bigbinary/neetoui/v2/layouts";
 import Card from "./Card";
 import { NOTES_DATA } from "./constants";
 import DeleteAlert from "./DeleteAlert";
-import NewNoteForm from "./NewNoteForm";
 
-import Title from "../Title";
+import NewNotePane from "./NewNotePane";
+import Title from "./Title";
+
 
 const Notes = () => {
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);
@@ -17,11 +18,11 @@ const Notes = () => {
   const [showNotePane, setNotePane] = useState(false);
 
   const handleDeleteAlert = () => {
-    setDeleteAlert(!showDeleteAlert);
+    setDeleteAlert(showDeleteAlert => !showDeleteAlert);
   };
 
   const handleNotePane = () => {
-    setNotePane(!showNotePane);
+    setNotePane(showNotePane => !showNotePane);
   };
 
   return (
@@ -111,7 +112,7 @@ const Notes = () => {
           onClose={() => handleDeleteAlert()}
         />
 
-        <NewNoteForm showPane={showNotePane} onClose={() => handleNotePane()} />
+        <NewNotePane showPane={showNotePane} onClose={() => handleNotePane()} />
       </div>
     </div>
   );
