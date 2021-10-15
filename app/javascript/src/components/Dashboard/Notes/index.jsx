@@ -102,12 +102,19 @@ const Notes = () => {
         <Title addNote={() => handleNotePane()} heading="All Notes" />
 
         {NOTES_DATA.map((note, index) => (
-          <Card key={index} title={note.title} status={note.status}>
+          <Card
+            key={index}
+            title={note.title}
+            status={note.status}
+            showAlert={() => handleDeleteAlert()}
+            editNote={() => null}
+          >
             <Typography style="body2">{note.body}</Typography>
           </Card>
         ))}
 
         <DeleteAlert
+          title="Delete Note"
           showModal={showDeleteAlert}
           onClose={() => handleDeleteAlert()}
         />
