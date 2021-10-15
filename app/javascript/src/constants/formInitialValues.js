@@ -18,5 +18,12 @@ export default {
     description: "",
     assignedContact: "",
     tags: ""
+  },
+
+  contactForm: {
+    firstName: "",
+    lastName: "",
+    email: "",
+    roles: ""
   }
 };
