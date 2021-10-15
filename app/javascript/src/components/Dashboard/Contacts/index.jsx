@@ -91,7 +91,11 @@ const Contacts = () => {
         />
       </MenuBar>
       <div className="flex flex-col  w-full p-5">
-        <Title addNote={() => handleContactPane()} heading="All Contacts" />
+        <Title
+          addNote={() => handleContactPane()}
+          heading="All Contacts"
+          buttonLabel="Add Contact"
+        />
 
         <Table showAlert={() => handleDeleteAlert()} />
 
