@@ -114,6 +114,7 @@ const Notes = () => {
         ))}
 
         <DeleteAlert
+          title="Delete Note"
           showModal={showDeleteAlert}
           onClose={() => handleDeleteAlert()}
         />
