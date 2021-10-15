@@ -6,7 +6,7 @@ import { Header } from "@bigbinary/neetoui/v2/layouts";
 
 import { BURGER_MENU } from "components/Common/Icons";
 
-const ActionBlock = ({ addNote }) => {
+const ActionBlock = ({ addNote, buttonLabel }) => {
   return (
     <div className="flex space-x-4">
       <Input
@@ -16,7 +16,7 @@ const ActionBlock = ({ addNote }) => {
       />
       <Button
         key="header_button"
-        label="Add Note"
+        label={buttonLabel}
         onClick={addNote}
         icon={() => <Plus size={16} className="ml-3" />}
       />
@@ -24,10 +24,10 @@ const ActionBlock = ({ addNote }) => {
   );
 };
 
-const Title = ({ heading, addNote }) => {
+const Title = ({ heading, addNote, buttonLabel }) => {
   return (
     <Header
-      actionBlock={<ActionBlock addNote={addNote} />}
+      actionBlock={<ActionBlock addNote={addNote} buttonLabel={buttonLabel} />}
       menuBarHandle={
         <Button className="mr-2" icon={() => BURGER_MENU} style="text" />
       }
