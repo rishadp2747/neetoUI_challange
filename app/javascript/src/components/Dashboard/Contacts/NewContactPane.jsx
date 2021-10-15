@@ -11,7 +11,7 @@ const NewNotePane = ({ showPane, onClose }) => {
   const handleSubmit = () => {
     //handle form submit
     onClose();
-    Toastr.success("Note added successfully");
+    Toastr.success("Contact added successfully");
   };
 
   return (
