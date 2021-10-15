@@ -2,12 +2,13 @@ import React from "react";
 
 import { Modal } from "@bigbinary/neetoui/v2";
 import { Typography, Button } from "@bigbinary/neetoui/v2";
+import PropTypes from "prop-types";
 
-const DeleteAlert = ({ showModal, onClose }) => {
+const DeleteAlert = ({ showModal, onClose, title }) => {
   return (
     <Modal isOpen={showModal} onClose={onClose} size="md">
       <Modal.Header>
-        <Typography style="h2">Delete Note</Typography>
+        <Typography style="h2">{title}</Typography>
       </Modal.Header>
       <Modal.Body>
         <Typography style="body2" lineHeight="normal">
@@ -21,6 +22,12 @@ const DeleteAlert = ({ showModal, onClose }) => {
       </Modal.Footer>
     </Modal>
   );
+};
+
+DeleteAlert.propTypes = {
+  title: PropTypes.string,
+  showModal: PropTypes.bool,
+  onClose: PropTypes.func
 };
 
 export default DeleteAlert;

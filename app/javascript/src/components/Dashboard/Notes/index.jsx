@@ -8,8 +8,9 @@ import Title from "components/Dashboard/Title";
 
 import Card from "./Card";
 import { NOTES_DATA } from "./constants";
-import DeleteAlert from "./DeleteAlert";
 import NewNotePane from "./NewNotePane";
+
+import DeleteAlert from "../DeleteAlert";
 
 const Notes = () => {
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);

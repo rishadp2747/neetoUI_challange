@@ -5,7 +5,7 @@ import { CONTACTS } from "components/Dashboard/constants";
 import TableHeader from "./TableHeader";
 import TableRow from "./TableRow";
 
-const Table = () => {
+const Table = ({ showAlert }) => {
   return (
     <table className="neeto-ui-table neeto-ui-table--checkbox neeto-ui-table--actions">
       <TableHeader />
@@ -19,6 +19,7 @@ const Table = () => {
           createdAt={rec.created}
           role={rec.roll}
           profileImg={rec.profileImg}
+          showAlert={showAlert}
         />
       ))}
     </table>
