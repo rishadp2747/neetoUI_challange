@@ -4,13 +4,12 @@ import { Search, Settings, Plus } from "@bigbinary/neeto-icons";
 import { Typography } from "@bigbinary/neetoui/v2";
 import { MenuBar } from "@bigbinary/neetoui/v2/layouts";
 
+import Title from "components/Dashboard/Title";
+
 import Card from "./Card";
 import { NOTES_DATA } from "./constants";
 import DeleteAlert from "./DeleteAlert";
-
 import NewNotePane from "./NewNotePane";
-import Title from "./Title";
-
 
 const Notes = () => {
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);

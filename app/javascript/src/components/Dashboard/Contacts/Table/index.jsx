@@ -1,6 +1,7 @@
 import React from "react";
 
-import { CONTACTS } from "./constants";
+import { CONTACTS } from "components/Dashboard/constants";
+
 import TableHeader from "./TableHeader";
 import TableRow from "./TableRow";
 
