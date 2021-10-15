@@ -4,6 +4,8 @@ import { Search, Settings, Plus } from "@bigbinary/neeto-icons";
 import { Typography, Pagination } from "@bigbinary/neetoui/v2";
 import { MenuBar } from "@bigbinary/neetoui/v2/layouts";
 
+import DeleteAlert from "components/Dashboard/DeleteAlert";
+
 import NewContactPane from "./NewContactPane";
 import Table from "./Table";
 
@@ -12,6 +14,11 @@ import Title from "../Title";
 const Contacts = () => {
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);
   const [showContactPane, setContactPane] = useState(false);
+  const [showDeleteAlert, setDeleteAlert] = useState(false);
+
+  const handleDeleteAlert = () => {
+    setDeleteAlert(showDeleteAlert => !showDeleteAlert);
+  };
 
   const handleContactPane = () => {
     setContactPane(!showContactPane);
@@ -86,7 +93,7 @@ const Contacts = () => {
       <div className="flex flex-col  w-full p-5">
         <Title addNote={() => handleContactPane()} heading="All Contacts" />
 
-        <Table />
+        <Table showAlert={() => handleDeleteAlert()} />
 
         <div className="flex flex-row items-center justify-end w-full mt-6 mb-8">
           <Pagination
@@ -96,6 +103,12 @@ const Contacts = () => {
             navigate={() => {}}
           />
         </div>
+
+        <DeleteAlert
+          title="Delete Contact"
+          showModal={showDeleteAlert}
+          onClose={() => handleDeleteAlert()}
+        />
 
         <NewContactPane
           showPane={showContactPane}

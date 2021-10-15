@@ -4,7 +4,15 @@ import { MenuHorizontal } from "@bigbinary/neeto-icons";
 import { Checkbox, Dropdown, Avatar, Typography } from "@bigbinary/neetoui/v2";
 import PropTypes from "prop-types";
 
-const TableRow = ({ check, name, profileImg, email, createdAt, role }) => {
+const TableRow = ({
+  check,
+  name,
+  profileImg,
+  email,
+  createdAt,
+  role,
+  showAlert
+}) => {
   return (
     <tbody>
       <tr>
@@ -41,7 +49,7 @@ const TableRow = ({ check, name, profileImg, email, createdAt, role }) => {
               icon={() => <MenuHorizontal size={17} />}
             >
               <li>Edit</li>
-              <li>Delete</li>
+              <li onClick={showAlert}>Delete</li>
             </Dropdown>
           </div>
         </td>
@@ -56,7 +64,8 @@ TableRow.propTypes = {
   role: PropTypes.string,
   email: PropTypes.string,
   profileImg: PropTypes.string,
-  createdAt: PropTypes.string
+  createdAt: PropTypes.string,
+  showAlert: PropTypes.func
 };
 
 export default TableRow;
