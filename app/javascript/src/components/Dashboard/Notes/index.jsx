@@ -99,7 +99,11 @@ const Notes = () => {
       </MenuBar>
 
       <div className="flex flex-col content-start justify-items-start w-full p-5">
-        <Title addNote={() => handleNotePane()} heading="All Notes" />
+        <Title
+          addNote={() => handleNotePane()}
+          heading="All Notes"
+          buttonLabel="Add Note"
+        />
 
         {NOTES_DATA.map((note, index) => (
           <Card
