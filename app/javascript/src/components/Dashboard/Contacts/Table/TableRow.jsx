@@ -1,5 +1,6 @@
 import React from "react";
 
+import { MenuHorizontal } from "@bigbinary/neeto-icons";
 import { Checkbox, Dropdown, Avatar, Typography } from "@bigbinary/neetoui/v2";
 import PropTypes from "prop-types";
 
@@ -34,7 +35,11 @@ const TableRow = ({ check, name, profileImg, email, createdAt, role }) => {
 
         <td>
           <div className="flex flex-row items-center justify-end space-x-3">
-            <Dropdown buttonStyle="text" position="bottom-end">
+            <Dropdown
+              buttonStyle="text"
+              position="bottom-end"
+              icon={() => <MenuHorizontal size={17} />}
+            >
               <li>Edit</li>
               <li>Delete</li>
             </Dropdown>
