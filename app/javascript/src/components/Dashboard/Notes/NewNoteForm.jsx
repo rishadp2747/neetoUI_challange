@@ -3,18 +3,12 @@ import React from "react";
 import { Input, Textarea, Select } from "@bigbinary/neetoui/v2";
 import { Formik, Form } from "formik";
 
-
 import formInitialValues from "constants/formInitialValues";
 import formValidationSchemas from "constants/formValidationSchemas";
 
-
 import { CONTACT_OPTIONS, TAGS_OPTIONS } from "./constants";
 
-const NewNoteForm = () => {
-  const handleSubmit = () => {
-    //handle form submit
-  };
-
+const NewNoteForm = ({ handleSubmit }) => {
   return (
     <Formik
       initialValues={formInitialValues.noteForm}

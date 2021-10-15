@@ -8,11 +8,7 @@ import formValidationSchemas from "constants/formValidationSchemas";
 
 import { ROLES_OPTIONS } from "./constants";
 
-const NewNoteForm = () => {
-  const handleSubmit = () => {
-    //handle form submit
-  };
-
+const NewNoteForm = ({ handleSubmit }) => {
   return (
     <Formik
       initialValues={formInitialValues.contactForm}
