@@ -4,6 +4,7 @@ import { Search, Settings, Plus } from "@bigbinary/neeto-icons";
 import { Typography, Pagination } from "@bigbinary/neetoui/v2";
 import { MenuBar } from "@bigbinary/neetoui/v2/layouts";
 
+import NewContactPane from "./NewContactPane";
 import Table from "./Table";
 
 import Title from "../Title";
@@ -95,6 +96,11 @@ const Contacts = () => {
             navigate={() => {}}
           />
         </div>
+
+        <NewContactPane
+          showPane={showContactPane}
+          onClose={() => handleContactPane()}
+        />
       </div>
     </div>
   );
