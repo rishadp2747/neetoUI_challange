@@ -15,7 +15,7 @@ const NewNotePane = ({ showPane, onClose }) => {
   return (
     <Pane isOpen={showPane} onClose={onClose}>
       <Pane.Header>
-        <Typography style="h4">Add New Note</Typography>
+        <Typography style="h2">Add New Note</Typography>
       </Pane.Header>
       <Pane.Body>
         <NewNoteForm handleSubmit={handleSubmit} />
@@ -26,6 +26,7 @@ const NewNotePane = ({ showPane, onClose }) => {
           type="submit"
           icon={() => <Check size={18} className="ml-2" />}
           onClick={() => handleSubmit()}
+          className="p-2"
         />
         <Button style="text" label="Cancel" onClick={onClose} />
       </Pane.Footer>
