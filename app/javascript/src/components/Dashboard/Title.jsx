@@ -24,12 +24,17 @@ const ActionBlock = ({ addNote, buttonLabel }) => {
   );
 };
 
-const Title = ({ heading, addNote, buttonLabel }) => {
+const Title = ({ heading, addNote, buttonLabel, collapseMenu }) => {
   return (
     <Header
       actionBlock={<ActionBlock addNote={addNote} buttonLabel={buttonLabel} />}
       menuBarHandle={
-        <Button className="mr-2" icon={() => BURGER_MENU} style="text" />
+        <Button
+          className="mr-2"
+          icon={() => BURGER_MENU}
+          style="text"
+          onClick={collapseMenu}
+        />
       }
       title={
         <div className="flex items-center">
