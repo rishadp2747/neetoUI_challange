@@ -15,7 +15,7 @@ const NewNoteForm = ({ handleSubmit }) => {
       onSubmit={handleSubmit}
       validationSchema={formValidationSchemas.contactForm}
     >
-      <Form className="space-y-4">
+      <Form className="space-y-5">
         <div className="flex space-x-2">
           <Input label="First Name" placeholder="Enter first name" required />
           <Input label="Last Name" placeholder="Enter last name" required />

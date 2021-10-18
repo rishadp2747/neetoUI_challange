@@ -15,7 +15,7 @@ const NewNoteForm = ({ handleSubmit }) => {
       onSubmit={handleSubmit}
       validationSchema={formValidationSchemas.noteForm}
     >
-      <Form className="space-y-4">
+      <Form className="space-y-5">
         <Input label="Title" placeholder="Enter Title" required />
         <Textarea
           label="Description"

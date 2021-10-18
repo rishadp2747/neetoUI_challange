@@ -14,6 +14,7 @@ import DeleteAlert from "../DeleteAlert";
 
 const Notes = () => {
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);
+  const [showMenu, setMenu] = useState(true);
   const [showDeleteAlert, setDeleteAlert] = useState(false);
   const [showNotePane, setNotePane] = useState(false);
 
@@ -25,10 +26,14 @@ const Notes = () => {
     setNotePane(showNotePane => !showNotePane);
   };
 
+  const handleCollapseMenu = () => {
+    setMenu(showMenu => !showMenu);
+  };
+
   return (
     <div className="flex w-full">
       <MenuBar
-        showMenu={true}
+        showMenu={showMenu}
         title={
           <div className="flex justify-between">
             <Typography style="h2">Notes</Typography>
@@ -98,11 +103,12 @@ const Notes = () => {
         <MenuBar.Block label="Asia" count={60} />
       </MenuBar>
 
-      <div className="flex flex-col content-start justify-items-start w-full p-5">
+      <div className="flex flex-col content-start w-full px-5 justify-items-start">
         <Title
           addNote={() => handleNotePane()}
           heading="All Notes"
           buttonLabel="Add Note"
+          collapseMenu={() => handleCollapseMenu()}
         />
 
         {NOTES_DATA.map((note, index) => (
