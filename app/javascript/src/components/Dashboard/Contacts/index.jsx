@@ -95,7 +95,7 @@ const Contacts = () => {
           onCollapse={() => setIsSearchCollapsed(true)}
         />
       </MenuBar>
-      <div className="flex flex-col w-full p-5">
+      <div className="flex flex-col w-full px-5">
         <Title
           addNote={() => handleContactPane()}
           heading="All Contacts"
