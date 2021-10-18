@@ -13,6 +13,7 @@ import Title from "../Title";
 
 const Contacts = () => {
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);
+  const [showMenu, setMenu] = useState(true);
   const [showContactPane, setContactPane] = useState(false);
   const [showDeleteAlert, setDeleteAlert] = useState(false);
 
@@ -24,10 +25,14 @@ const Contacts = () => {
     setContactPane(!showContactPane);
   };
 
+  const handleCollapseMenu = () => {
+    setMenu(showMenu => !showMenu);
+  };
+
   return (
     <div className="flex w-full">
       <MenuBar
-        showMenu={true}
+        showMenu={showMenu}
         title={
           <div className="flex justify-between">
             <Typography style="h2">Notes</Typography>
@@ -90,11 +95,12 @@ const Contacts = () => {
           onCollapse={() => setIsSearchCollapsed(true)}
         />
       </MenuBar>
-      <div className="flex flex-col  w-full p-5">
+      <div className="flex flex-col w-full p-5">
         <Title
           addNote={() => handleContactPane()}
           heading="All Contacts"
           buttonLabel="Add Contact"
+          collapseMenu={() => handleCollapseMenu()}
         />
 
         <Table showAlert={() => handleDeleteAlert()} />
