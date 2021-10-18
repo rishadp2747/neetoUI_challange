@@ -98,7 +98,7 @@ const Notes = () => {
         <MenuBar.Block label="Asia" count={60} />
       </MenuBar>
 
-      <div className="flex flex-col content-start justify-items-start w-full p-5">
+      <div className="flex flex-col content-start w-full px-5 justify-items-start">
         <Title
           addNote={() => handleNotePane()}
           heading="All Notes"
