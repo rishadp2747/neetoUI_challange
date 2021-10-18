@@ -9,10 +9,10 @@ const TableHeader = () => {
         <th>
           <Checkbox name="header" />
         </th>
-        <th>Name & Roll</th>
-        <th>Email</th>
-        <th>Created At</th>
-        <th></th>
+        <th className="px-3">Name & Roll</th>
+        <th className="px-3">Email</th>
+        <th className="px-3">Created At</th>
+        <th className="px-3"></th>
       </tr>
     </thead>
   );

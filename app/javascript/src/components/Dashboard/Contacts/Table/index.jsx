@@ -20,6 +20,7 @@ const Table = ({ showAlert }) => {
           role={rec.roll}
           profileImg={rec.profileImg}
           showAlert={showAlert}
+          isOdd={index % 2 !== 0 ? true : false}
         />
       ))}
     </table>
